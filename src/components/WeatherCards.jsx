@@ -1,6 +1,11 @@
-
+import React, { useState } from "react"
 
 const WeatherCards = ({ weather, temperature }) => {
+
+  const [temCelsius, setTemCelsius] = useState(true)
+
+
+  const changeTemperature = () => {setTemCelsius(!temCelsius)}
 
 console.log(weather)
 
@@ -9,20 +14,26 @@ console.log(weather)
     <h1>Weather App</h1>
     <h2>{weather?.name}, {weather?.sys.country}</h2>
     <section>
-        <header>⛅</header>
+        <img src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@4x.png`} alt="" />
         <article>
             <h3>"{weather?.weather[0].description}"</h3>
             <ul>
                 <li><span>Wind Speed</span>{weather?.wind.speed}Meter/sec</li>
                 <li><span>Clouds</span>{weather?.clouds.all}%</li>
-                <li><span>Pressure</span>{weather?.main.pressure}Hpa</li>
+                <li><span>Pressure</span>{weather?.main.pressure}hPa</li>
             </ul>
+            <div>
+              {
+                temCelsius
+                ? `${temperature?.celsius}°C`
+                : `${temperature?.farenheit}°F`
+              }
+            </div>
 
-            <button className="button">Change to</button>
+            <button onClick={changeTemperature}>Change to {temCelsius ? "°F" : "°C"}</button>
         </article>
     </section>
     <footer>
-      <h4>{temperature?.celsius}</h4>
     </footer>
     </div>
    
