@@ -22,19 +22,18 @@ console.log(weather)
                 <li><span>Clouds</span>{weather?.clouds.all}%</li>
                 <li><span>Pressure</span>{weather?.main.pressure}hPa</li>
             </ul>
-            <div>
+              <h4>
               {
                 temCelsius
                 ? `${temperature?.celsius}°C`
                 : `${temperature?.farenheit}°F`
               }
-            </div>
+              </h4>
+
 
             <button onClick={changeTemperature}>Change to {temCelsius ? "°F" : "°C"}</button>
         </article>
     </section>
-    <footer>
-    </footer>
     </div>
    
   )

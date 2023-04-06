@@ -8,6 +8,7 @@ function App() {
   const [latlon, setlatlon] = useState()
   const [weather, setWeather] = useState()
   const [temperature, setTemperature] = useState()
+  const [inputValue, setInputValue] = useState('')
 
   
 
@@ -34,7 +35,7 @@ useEffect(() => {
 if(latlon){
 
   const apiKey = '9aa856591b8704730049173d1e52c911'
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latlon.lat}&lon=${latlon.lon}&appid=${apiKey}`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}`
   axios.get(url)
 
   .then(res => {
@@ -48,9 +49,15 @@ if(latlon){
 
 }
 
-}, [latlon])
+}, [latlon, inputValue])
 
 
+const handleSubmit = e =>{
+  e.preventDefault()
+  setInputValue(e.target.nameCountry.value)
+}
+
+console.log(handleSubmit);
 
 
 console.log(weather);
@@ -60,6 +67,10 @@ console.log(weather);
 
   return (
     <div className="App">
+    <form onSubmit={handleSubmit}>
+      <input id='nameCountry' type="text" />
+      <button>Search</button>
+    </form>
     <WeatherCards 
     weather={weather}
     temperature={temperature}
