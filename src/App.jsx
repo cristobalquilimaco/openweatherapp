@@ -2,6 +2,7 @@ import {useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
 import WeatherCards from './components/WeatherCards'
+import LoadingPage from './components/LoadingPage'
 
 function App() {
 
@@ -27,7 +28,7 @@ useEffect(() => {
   
   navigator.geolocation.getCurrentPosition(success, error)
 
-}, [])
+}, [inputValue])
 
 
 useEffect(() => {
@@ -35,7 +36,8 @@ useEffect(() => {
 if(latlon){
 
   const apiKey = '9aa856591b8704730049173d1e52c911'
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}`
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latlon.lat}&q=${inputValue}&lon=${latlon.lon}&appid=${apiKey}`
+
   axios.get(url)
 
   .then(res => {
@@ -49,7 +51,7 @@ if(latlon){
 
 }
 
-}, [latlon, inputValue])
+}, [latlon])
 
 
 const handleSubmit = e =>{
@@ -67,14 +69,21 @@ console.log(weather);
 
   return (
     <div className="App">
+
+      {
+        weather
+        ?
+        <WeatherCards 
+        weather={weather}
+        temperature={temperature}
+        />
+        :
+        <LoadingPage/>
+      }
     <form onSubmit={handleSubmit}>
       <input id='nameCountry' type="text" />
       <button>Search</button>
     </form>
-    <WeatherCards 
-    weather={weather}
-    temperature={temperature}
-    />
     </div>
   )
 }
