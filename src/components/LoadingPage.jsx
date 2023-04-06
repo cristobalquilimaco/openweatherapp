@@ -2,7 +2,13 @@ import React from 'react'
 
 const LoadingPage = () => {
   return (
-    <h1>loading...</h1>
+    <body className='bodyLoading'>
+          <div className='loadingPage'>
+        <i className='bx bx-sun'></i>
+    <h1 className='wait'>loading...</h1>
+    
+    </div>
+    </body>
   )
 }
 

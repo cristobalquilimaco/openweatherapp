@@ -3,6 +3,7 @@ import React, { useState } from "react"
 const WeatherCards = ({ weather, temperature }) => {
 
   const [temCelsius, setTemCelsius] = useState(true)
+  
 
 
   const changeTemperature = () => {setTemCelsius(!temCelsius)}
@@ -14,6 +15,7 @@ console.log(weather)
     <h1>Weather App</h1>
     <h2>{weather?.name}, {weather?.sys.country}</h2>
     <section>
+      
         <img src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@4x.png`} alt="" />
         <article>
             <h3>"{weather?.weather[0].description}"</h3>
@@ -29,10 +31,9 @@ console.log(weather)
                 : `${temperature?.farenheit}°F`
               }
               </h4>
-
-
             <button onClick={changeTemperature}>Change to {temCelsius ? "°F" : "°C"}</button>
         </article>
+
     </section>
     </div>
    

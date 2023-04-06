@@ -74,26 +74,29 @@ console.log(weather);
 
   return (
     <div className="App">
-
       {
-  
+        
           hasError 
           ? <ErrorFetch/>
           :
         weather
         ?
+        
         <WeatherCards 
         weather={weather}
         temperature={temperature}
+        
         />
+
         :
         <LoadingPage/>
       }
-    <form onSubmit={handleSubmit}>
-      <input id='nameCountry' type="text" />
-      <button>Search</button>
-    </form>
+            <form className='formInput' onSubmit={handleSubmit}>
+        <input id='nameCountry' type="text" />
+        <button>Search</button>
+      </form>
     </div>
+    
   )
 }
 
