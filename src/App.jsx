@@ -3,6 +3,7 @@ import './App.css'
 import axios from 'axios'
 import WeatherCards from './components/WeatherCards'
 import LoadingPage from './components/LoadingPage'
+import ErrorFetch from './components/ErrorFetch'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
   const [weather, setWeather] = useState()
   const [temperature, setTemperature] = useState()
   const [inputValue, setInputValue] = useState('')
+  const [hasError, setHasError] = useState(false)
 
   
 
@@ -28,7 +30,7 @@ useEffect(() => {
   
   navigator.geolocation.getCurrentPosition(success, error)
 
-}, [inputValue])
+}, [])
 
 
 useEffect(() => {
@@ -46,12 +48,15 @@ if(latlon){
 
     setTemperature({celsius, farenheit})
     setWeather(res.data)
+    setHasError(false)
   })
-  .catch(err => console.log(err))
-
+  .catch(err => {
+    console.log(err)
+    setHasError(true)
+  })
 }
 
-}, [latlon])
+}, [latlon, inputValue])
 
 
 const handleSubmit = e =>{
@@ -71,6 +76,10 @@ console.log(weather);
     <div className="App">
 
       {
+  
+          hasError 
+          ? <ErrorFetch/>
+          :
         weather
         ?
         <WeatherCards 
