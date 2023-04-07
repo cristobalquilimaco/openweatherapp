@@ -64,7 +64,7 @@ body{
   }
 
 .bxs-sun{
-
+    width: 250px;
     font-size: 50px;
     position: absolute;
     top: 50%;
