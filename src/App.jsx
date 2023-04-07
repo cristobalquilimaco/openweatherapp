@@ -74,6 +74,7 @@ const handleSubmit = e =>{
 
 return (
   <div className="App">
+    <img className='appimage' src="./backgrounds/background4.jpg" alt="" />
     {weather ? (
       <div>
         <WeatherCards 
