@@ -3,7 +3,7 @@
 const LoadingPage = () => {
   return (
 <div className='loadingPage'>
-<i class='bx bxs-sun'></i>
+        <img className="bxs-sun" src="./public/backgrounds/luz-del-sol.png" alt="" />
     <p className="textLoading">Loading...</p>
     </div>
               
