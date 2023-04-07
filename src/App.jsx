@@ -90,7 +90,9 @@ return (
         </form>
       </div>
     ) : (
-      <LoadingPage/>
+      
+      <LoadingPage 
+      />
     )}
     {hasError && (
       

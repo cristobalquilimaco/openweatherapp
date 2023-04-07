@@ -13,7 +13,7 @@ const WeatherCards = ({ weather, temperature}) => {
     setTemCelsius(!temCelsius)
   }
 
-console.log(weather)
+
 
   return (
          <div className="card">

@@ -63,14 +63,15 @@ body{
     animation: blink 1s infinite;
   }
 
-.bx-sun{
+.bxs-sun{
 
-    width: 250px;
+    font-size: 250px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: spin 5s linear infinite;
+    color: yellow;
 }
 
 @keyframes spin {
