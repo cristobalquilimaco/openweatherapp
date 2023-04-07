@@ -1,6 +1,4 @@
-import { useState } from "react"
 
-useState
 
 const ErrorFetch = () => {
 

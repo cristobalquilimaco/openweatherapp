@@ -5,6 +5,8 @@ import WeatherCards from './components/WeatherCards'
 import LoadingPage from './components/LoadingPage'
 import ErrorFetch from './components/ErrorFetch'
 
+
+
 function App() {
 
   const [latlon, setlatlon] = useState()
@@ -12,6 +14,8 @@ function App() {
   const [temperature, setTemperature] = useState()
   const [inputValue, setInputValue] = useState('')
   const [hasError, setHasError] = useState(false)
+
+
 
   
 
@@ -62,42 +66,36 @@ if(latlon){
 const handleSubmit = e =>{
   e.preventDefault()
   setInputValue(e.target.nameCountry.value)
+  e.target.nameCountry.value= ''
 }
 
-console.log(handleSubmit);
-
-
-console.log(weather);
 
 
 
-
-  return (
-    <div className="App">
-      {
-        
-          hasError 
-          ? <ErrorFetch/>
-          :
-        weather
-        ?
-        
+return (
+  <div className="App">
+    {weather ? (
+      <div>
         <WeatherCards 
-        weather={weather}
-        temperature={temperature}
-        
+          weather={weather}
+          temperature={temperature}
         />
-
-        :
-        <LoadingPage/>
-      }
-            <form className='formInput' onSubmit={handleSubmit}>
-        <input id='nameCountry' type="text" />
-        <button>Search</button>
-      </form>
-    </div>
-    
-  )
+        <form className='formInput' onSubmit={handleSubmit}>
+          <input id='nameCountry' placeholder='Search city' type="text" required></input>
+          <button className='buttonSubmit' >Search</button>
+        </form>
+      </div>
+    ) : (
+      <LoadingPage/>
+    )}
+    {hasError && (
+      <p className='alertError'>
+        <img className='sun' src="./backgrounds/icons8.gif" alt="" />
+        we couldn't find the city
+      </p>
+    )}
+  </div>
+)
 }
 
 export default App
