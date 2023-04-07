@@ -88,7 +88,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 font-family: 'Nunito Sans', sans-serif;
-background-image: url("./backgrounds/background4.jpg");
+/* background-image: url("./backgrounds/background4.jpg"); */
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;

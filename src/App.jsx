@@ -5,6 +5,7 @@ import WeatherCards from './components/WeatherCards'
 import LoadingPage from './components/LoadingPage'
 import ErrorFetch from './components/ErrorFetch'
 import getRandomImages from './utils/getRandomImages'
+import ButtonImage from './components/ButtonImage'
 
 const images = [1, 2, 3, 4, 5, 6, 7, 8 ]
 
@@ -19,7 +20,7 @@ function App() {
 
 
 const appStyle = {
-  backGroundImage: `url('./backgrounds/background4.jpg')`,
+  backgroundImage: `url('./backgrounds/background${img}.jpg')`,
 }
   
 
@@ -75,7 +76,6 @@ const handleSubmit = e =>{
 
 
 
-
 return (
   <div style={appStyle} className="App">
     {weather ? (
@@ -86,7 +86,7 @@ return (
         />
         <form className='formInput' onSubmit={handleSubmit}>
           <input id='nameCountry' placeholder='Search city' type="text" required></input>
-          <button className='buttonSubmit' >Search</button>
+          <ButtonImage setImg={setImg} />
         </form>
       </div>
     ) : (
