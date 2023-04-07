@@ -4,6 +4,7 @@ import axios from 'axios'
 import WeatherCards from './components/WeatherCards'
 import LoadingPage from './components/LoadingPage'
 import ErrorFetch from './components/ErrorFetch'
+import getRandomImages from './utils/getRandomImages'
 
 const images = [1, 2, 3, 4, 5, 6, 7, 8 ]
 
@@ -76,8 +77,7 @@ const handleSubmit = e =>{
 
 
 return (
-  <div className="App">
-    <img className='appimage' src="./backgrounds/background4.jpg" alt="" />
+  <div style={appStyle} className="App">
     {weather ? (
       <div>
         <WeatherCards 
