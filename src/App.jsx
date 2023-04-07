@@ -5,7 +5,7 @@ import WeatherCards from './components/WeatherCards'
 import LoadingPage from './components/LoadingPage'
 import ErrorFetch from './components/ErrorFetch'
 
-
+const images = [1, 2, 3, 4, 5, 6, 7, 8 ]
 
 function App() {
 
@@ -14,9 +14,12 @@ function App() {
   const [temperature, setTemperature] = useState()
   const [inputValue, setInputValue] = useState('')
   const [hasError, setHasError] = useState(false)
+  const [img, setImg] = useState(getRandomImages(images))
 
 
-
+const appStyle = {
+  backGroundImage: `url('./backgrounds/background4.jpg')`,
+}
   
 
 useEffect(() => {
