@@ -16,7 +16,7 @@ const WeatherCards = ({ weather, temperature}) => {
 
 
   return (
-         <div className="card">
+    <div className="card">
     <h1>Weather App</h1>
     <h2>{weather?.name}, {weather?.sys.country}</h2>
     <section className="cardInfo">

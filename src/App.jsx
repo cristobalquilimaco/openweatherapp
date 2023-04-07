@@ -3,7 +3,6 @@ import './App.css'
 import axios from 'axios'
 import WeatherCards from './components/WeatherCards'
 import LoadingPage from './components/LoadingPage'
-import ErrorFetch from './components/ErrorFetch'
 import getRandomImages from './utils/getRandomImages'
 import ButtonImage from './components/ButtonImage'
 
