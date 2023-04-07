@@ -240,11 +240,14 @@ h4{
 }
 
 form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 0.8rem;
     margin-bottom: 0.5rem;
 
  top: -100px; 
- object-position: unset; 
+
  }
 
 input{
