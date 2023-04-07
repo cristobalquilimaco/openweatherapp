@@ -93,6 +93,7 @@ return (
       <LoadingPage/>
     )}
     {hasError && (
+      
       <p className='alertError'>
         <img className='sun' src="./backgrounds/icons8.gif" alt="" />
         we couldn't find the city
