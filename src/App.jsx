@@ -69,7 +69,7 @@ if(latlon){
 
 const handleSubmit = e =>{
   e.preventDefault()
-  setInputValue(e.target.nameCountry.value)
+  setInputValue(e.target.nameCountry.value.trim())
   e.target.nameCountry.value= ''
 }
 
