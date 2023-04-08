@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;900&display=swap');
 
 
-#root{
-    --button-color: #C2E7FF;
-    --button-hover: rgb(131, 131, 211);
-    --box-color: #ffffff;
-    --text-color: #81898D;
 
-}
+
+
+/*--------------------------------------------- BODY ---------------------------------------------*/
 
 body{
     margin: 1;
@@ -16,12 +13,29 @@ body{
 
 
 
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ------------------CARD IFORMATION--------------------------- */
+.App{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    
+    }
+
+
+
 
 
 .loadingPage{
@@ -38,6 +52,14 @@ body{
     justify-content: center;
     background-color: rgba(11, 20, 155, 0.5);
     
+}
+
+.appimage{
+    width: 100%;
+}
+
+img{
+width: 100%;
 }
 
 
@@ -81,28 +103,9 @@ transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
-.App{
-margin: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: 'Nunito Sans', sans-serif;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-width: 100%;
-height: 100vh;
-
-}
 
 
-.appimage{
-    width: 100%;
-}
 
-img{
-width: 100%;
-}
 
 
 
@@ -139,28 +142,9 @@ li{
     }
 }
 
-.App{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    
-}
 
-.card{
-    background-color: rgba(40, 38, 175, 0.61);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    max-width: 380px;
-    min-width: 380px;
-    max-height: 380px;
-    min-height:380px;
-    
 
-}
 
 
 
